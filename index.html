@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Cake Cutting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1 {
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+    #cake {
+      width: 250px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #cake:active {
+      transform: scale(0.95);
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday! Click the cake to cut it 🎉</h1>
+
+  <img id="cake" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAByUExURUdwTKaqq6Woq6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6Sop6SopwAAAFSSURBVHja7doxEsIwEIBhogSCP//r7q0GooylNime59ruM3AMJBEgAAAAAAAAAAAAC8GePjdSlmE7PK5vVsQt1zG72Xd23sgz2d3tXdZ3Z1vZvd13ZrdZ3bZrdp3bZrdp3bZrdp3bZrdp3bZrdr32yff7jO8Ozb7sOzb7sOzb7sOzb7sOzb7sOzbfkD9vF2ZE0qPj4AAAAASUVORK5CYII=" alt="Cake" />
+
+  <div id="message">The cake is cut! 🎉🎂💖<br> Wishing you all the happiness!</div>
+
+  <script>
+    const cake = document.getElementById('cake');
+    const message = document.getElementById('message');
+    let cut = false;
+
+    cake.addEventListener('click', () => {
+      if (!cut) {
+        cake.src = 'https://i.imgur.com/rcN6YQi.png'; // cut cake image
+        message.style.opacity = 1;
+        cut = true;
+      }
+    });
+  </script>
+</body>
+</html>
